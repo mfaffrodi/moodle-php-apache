@@ -16,6 +16,14 @@ The following command will expose the current working directory on port 8080:
 $ docker run --name web0 -p 8080:80  -v $PWD:/var/www/html moodlehq/moodle-php-apache:7.1
 ```
 
+# Another Usage
+```bash
+$ docker network create mooodlenet
+$ cd mariadb10
+$ docker-compose up -d
+$ cd ..
+$ docker-compose up -d
+```
 # Features
 
 * Preconfigured with all php extensions required for Moodle development and all database drivers
