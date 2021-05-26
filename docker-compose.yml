@@ -1,0 +1,18 @@
+version: '2'
+services:
+  moodle:
+    image: apache73:latest
+    volumes:
+      - '/home/mfajar/deploy/moodle:/var/www/html'
+      - '/home/mfajar/deploy/moodle-data:/var/www/moodledata'
+      - '/home/mfajar/deploy/behatdata:/var/www/behatdata'
+      - '/home/mfajar/deploy/behatfaildumps:/var/www/behatfaildumps'
+      - '/home/mfajar/deploy/copy_ssl:/var/imported/ssl'
+      - '/home/mfajar/deploy/apache_log:/var/log/apache2'
+    ports:
+      - '8080:80'
+      - '8081:443'
+networks:
+  default:
+    external: true
+    name: moodlenet
